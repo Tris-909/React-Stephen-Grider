@@ -1,0 +1,15 @@
+.container {
+    margin-left: 25%;
+    margin-top: 15%;
+    border: 2px solid black;
+    width: 50%;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+#move {
+    position: relative;;
+    left: 95%
+}
