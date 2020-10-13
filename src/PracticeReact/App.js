@@ -1,18 +1,24 @@
 import React from 'react';
 import axios from 'axios';
 import Search from './Search';
+import youtube from './YoutubeAPI';
 
 class App extends React.Component {
 
-    onSubmit = (e) => {
-        e.preventDefault();
-        console.log('submit')
+    onSubmit = (term) => {
+        console.log(term);
+
+        youtube.get('/search', {
+            params: {
+                q: term
+            }
+        })
     }
 
     render() {
         return(
             <div>
-                <Search onSubmit={this.onSubmit}/>
+                <Search onSubmit={this.onSubmit} />
             </div>
         );
     }
