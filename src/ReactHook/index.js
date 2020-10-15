@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 // import Accordion from './Accordion';
 // import Search from './Search';
-import DropDown from './DropDown';
+// import DropDown from './DropDown';
+import Translate from './Translate';
 
 // const items = [
 //     {
@@ -32,31 +33,39 @@ import DropDown from './DropDown';
 //     );
 // }
 
-const options = [
-    {
-        label: 'Red',
-        value: 'red'
-    }, 
-    {
-        label: 'Green',
-        value: 'green'
-    },
-    {
-        label: 'Blue',
-        value: 'blue'
-    }
-];
+// const options = [
+//     {
+//         label: 'Red',
+//         value: 'red'
+//     }, 
+//     {
+//         label: 'Green',
+//         value: 'green'
+//     },
+//     {
+//         label: 'Blue',
+//         value: 'blue'
+//     }
+// ];
+
+// const Widget = () => {
+//     const [selected, setSelected] = useState(options[0]);
+
+//     const onSelectedHandler = (index) => {
+//         setSelected(options[index]);
+//     }
+
+//     return(
+//         <div>
+//             <DropDown selected={selected} onSelectedHandler={onSelectedHandler} options={options} />
+//         </div>
+//     );
+// }
 
 const Widget = () => {
-    const [selected, setSelected] = useState(options[0]);
-
-    const onSelectedHandler = (index) => {
-        setSelected(options[index]);
-    }
-
     return(
         <div>
-            <DropDown selected={selected} onSelectedHandler={onSelectedHandler} options={options} />
+            <Translate />
         </div>
     );
 }
