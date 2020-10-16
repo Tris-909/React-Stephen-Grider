@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './PracticeReact/App';
+import App from './PracticeReact/App';
 import Widget from './ReactHook/index';
 
 // ReactDOM.render(<Props3 />, document.getElementById('root'));
