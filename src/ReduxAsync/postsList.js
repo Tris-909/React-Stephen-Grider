@@ -1,24 +1,25 @@
 import React from 'react';
-import { fetchPostsThunk, fetchUsersThunk } from './actions';
+import UserHeader from './userHeader';
+import { fetchPostsThunk } from './actions';
 import { connect } from 'react-redux';
 
 class PostsList extends React.Component {
     componentDidMount() {
         this.props.fetchPostsThunk();
-        this.props.fetchUsersThunk();
     }
 
     renderData = () => {
-        if (this.props.posts.data !== undefined && this.props.users.data !== undefined ) {
-            return this.props.posts.data.map((post) => {
+        if (this.props.posts[0] !== undefined) {
+
+            return this.props.posts[0].map((post) => {
                 return(
-                <div className="item" key={post.id}>
-                    <div className="content">
-                        <div className="header">{post.title}</div>
-                        <h3> Name: { this.props.users.data[post.userId-1].name } </h3>
+                    <div className="item" key={post.id}>
+                        <div className="content">
+                            <div className="header">{post.title}</div>
+                            <UserHeader userId={post.userId} />
+                        </div>
                     </div>
-                </div>
-                );
+                ); 
             });
         } else {
             return(
@@ -46,11 +47,8 @@ class PostsList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        posts: state.posts.posts,
-        postLoading: state.posts.isLoading,
-        userLoading: state.users.isLoading,
-        users: state.users.users
+        posts: state.posts  
     }
 }
 
-export default connect(mapStateToProps, {fetchPostsThunk, fetchUsersThunk})(PostsList);
+export default connect(mapStateToProps, {fetchPostsThunk})(PostsList);
