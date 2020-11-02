@@ -14,7 +14,6 @@ const App = () => {
         <React.Fragment>
             <BrowserRouter>
                 <Header />
-
                 <Route path="/" exact component={StreamList} />
                 <Route path="/streams/new" exact component={StreamCreate} />
                 <Route path="/streams/delete" exact component={StreamDelete} />
