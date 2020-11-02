@@ -13,7 +13,7 @@ const Header = () => {
             <Link className="item" to="/streams/new">Streams Create</Link>
             <Link className="item" to="/streams/delete">Streams Delete</Link>
             <Link className="item" to="/streams/edit">Streams Edit</Link>
-            <div className="item" style={{backgroundColor: '#de5246', color: 'white'}}> <GoogleAuth/> </div>
+            <div className="item"> <GoogleAuth/> </div>
         </div>
     );
 }
