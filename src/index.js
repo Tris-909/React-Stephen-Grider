@@ -2,4 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './StreamApp/App';
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+import { Provider } from 'react-redux';
+import store from './StreamApp/store/store';
+
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.querySelector('#root'));
